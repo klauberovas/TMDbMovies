@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { fetchMovies } from '../../services/tmdb';
-import { Movie } from '../../types/movie';
+import { Movie } from '../../types/movies';
 import MoviePreview from '../MoviePreview/MoviePreview';
 import './style.scss';
 
