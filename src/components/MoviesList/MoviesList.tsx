@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { fetchMovies } from '../../services/tmdb';
 import { Movie } from '../../types/movie';
 import MoviePreview from '../MoviePreview/MoviePreview';
-import './style.css';
+import './style.scss';
 
 const MoviesList = () => {
   const [movies, setMovies] = useState<Movie[] | undefined>(undefined);

@@ -1,5 +1,5 @@
-import './style.css';
 import { Link } from 'react-router-dom';
+import './style.scss';
 
 interface MoviePreviewProps {
   id: number;
