@@ -1,15 +1,11 @@
 import './App.css';
-import { useEffect } from 'react';
-import { fetchMovies } from './services/tmdb';
+import MoviesList from './components/MoviesList/MoviesList.tsx';
 
 const App = () => {
-  useEffect(() => {
-    fetchMovies();
-  }, []);
-
   return (
     <>
       <h1>Projekt</h1>
+      <MoviesList />
     </>
   );
 };
