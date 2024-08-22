@@ -1,10 +1,11 @@
 import './App.css';
+import Header from './components/Header/Header.tsx';
 import MoviesList from './components/MoviesList/MoviesList.tsx';
 
 const App = () => {
   return (
     <>
-      <h1>Projekt</h1>
+      <Header />
       <MoviesList />
     </>
   );

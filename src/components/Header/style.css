@@ -1,0 +1,12 @@
+.header,
+.header__img {
+  max-width: 350px;
+}
+
+.header {
+  margin: 3em auto;
+}
+
+.header__img {
+  width: 100%;
+}

@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { fetchMovies } from '../../services/tmdb';
 import { Movie } from '../../types/movie';
+import MoviePreview from '../MoviePreview/MoviePreview';
+import './style.css';
 
 const MoviesList = () => {
   const [movies, setMovies] = useState<Movie[] | undefined>(undefined);
@@ -25,14 +27,17 @@ const MoviesList = () => {
   if (loading) return <div>Loading...</div>;
   if (error) return <div>{error}</div>;
 
+  console.log(movies);
   return (
-    <div>
+    <div className="movies-list">
       {movies && movies.length > 0 ? (
-        <ul>
-          {movies.map((movie) => (
-            <li key={movie.id}>{movie.title}</li>
-          ))}
-        </ul>
+        movies.map((movie) => (
+          <MoviePreview
+            key={movie.id}
+            title={movie.title}
+            src={movie.poster_path}
+          />
+        ))
       ) : (
         <div>No movies available</div>
       )}

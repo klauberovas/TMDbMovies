@@ -9,6 +9,7 @@ TMDb Movies je jednoduchá aplikace postavená na Reactu a TypeScriptu, která u
 
 ## Technologie
 
+- **FontMeme**: Vytvoření nadpisu pro stránku
 - **React**: Front-end knihovna pro vytváření uživatelských rozhraní.
 - **TypeScript**: Staticky typovaný jazyk nad JavaScriptem pro zajištění lepšího typování a vývojářské zkušenosti.
 - **TMDB API**: API pro získávání informací o filmech.
