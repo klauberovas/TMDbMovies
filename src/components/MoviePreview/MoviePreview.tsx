@@ -1,19 +1,21 @@
 import './style.css';
+import { Link } from 'react-router-dom';
 
 interface MoviePreviewProps {
+  id: number;
   title: string;
   src: string;
 }
 
-const MoviePreview = ({ title, src }: MoviePreviewProps) => {
+const MoviePreview = ({ id, title, src }: MoviePreviewProps) => {
   return (
-    <div className="movie-item">
+    <Link to={`/detail/${id}`} className="movie-item">
       <img
         className="movie-item__img"
         src={`https://image.tmdb.org/t/p/w300/${src}`}
         alt={`${title} poster`}
       />
-    </div>
+    </Link>
   );
 };
 export default MoviePreview;

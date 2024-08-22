@@ -1,12 +1,12 @@
+import { Outlet } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header/Header.tsx';
-import MoviesList from './components/MoviesList/MoviesList.tsx';
 
 const App = () => {
   return (
     <>
       <Header />
-      <MoviesList />
+      <Outlet />
     </>
   );
 };

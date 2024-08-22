@@ -4,12 +4,19 @@
   align-items: center;
 }
 
-.movie-item__img {
+.movie-item__img,
+.movie-item__title {
   max-width: 300px;
+}
+
+
+.movie-item__img {
   max-height: 70vh;
   width: 100%;
 }
 
-.movie-item__title {
-  max-width: 300px;
+@media screen and (min-width: 960px) {
+  .movie-item:hover {
+    transform: scale(1.1);
+  }
 }

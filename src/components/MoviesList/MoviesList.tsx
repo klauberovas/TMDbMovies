@@ -27,13 +27,13 @@ const MoviesList = () => {
   if (loading) return <div>Loading...</div>;
   if (error) return <div>{error}</div>;
 
-  console.log(movies);
   return (
     <div className="movies-list">
       {movies && movies.length > 0 ? (
         movies.map((movie) => (
           <MoviePreview
             key={movie.id}
+            id={movie.id}
             title={movie.title}
             src={movie.poster_path}
           />
