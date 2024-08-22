@@ -1,10 +1,13 @@
+import { Link } from 'react-router-dom';
 import './style.scss';
 import title from './img/title.png';
 
 const Header = () => {
   return (
     <header className="header">
-      <img className="header__img" src={title} alt="title Cineverse" />
+      <Link to="/">
+        <img className="header__img" src={title} alt="title Cineverse" />
+      </Link>
     </header>
   );
 };
