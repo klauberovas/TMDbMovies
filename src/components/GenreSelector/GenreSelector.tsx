@@ -4,7 +4,12 @@ import { fetchGenres } from '../../services/tmdb';
 import { useLanguageContext } from '../../settings/settings';
 import './index.scss';
 
-const GenreSelector = () => {
+interface GenreSelectorProps {
+  genre: string;
+  onSelectGenre: (str: string) => void;
+}
+
+const GenreSelector = ({ genre, onSelectGenre }: GenreSelectorProps) => {
   const { language } = useLanguageContext();
 
   const [genres, setGenres] = useState<Genre[] | undefined>(undefined);
@@ -26,6 +31,10 @@ const GenreSelector = () => {
     fetchData();
   }, [language]);
 
+  const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    onSelectGenre(event.target.value);
+  };
+
   if (loading) return <div>Loading...</div>;
   if (error) return <div>{error}</div>;
 
@@ -33,7 +42,13 @@ const GenreSelector = () => {
     <>
       {genres && genres.length > 0 ? (
         <div className="genre-selector">
-          <select className="genre-selector__select" name="genres" id="genre">
+          <select
+            className="genre-selector__select"
+            name="genres"
+            id="genre"
+            value={genre}
+            onChange={handleChange}
+          >
             {genres.map((genre) => {
               return (
                 <option

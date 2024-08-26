@@ -8,10 +8,11 @@ const API_KEY: string = import.meta.env.VITE_TMDB_API_KEY;
 
 export const fetchMovies = async (
   language: string,
+  genre: string,
 ): Promise<Movie[] | undefined> => {
   try {
     const response = await axios.get<FetchMovieResponse>(
-      `${BASE_URL}/movie/popular?api_key=${API_KEY}&language=${language}&page=1`,
+      `${BASE_URL}/discover/movie?api_key=${API_KEY}&language=${language}&with_genres=${genre}`,
     );
     return response.data.results;
   } catch (error) {

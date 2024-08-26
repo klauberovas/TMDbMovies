@@ -10,11 +10,12 @@ const HomePage = () => {
   const [movies, setMovies] = useState<Movie[] | undefined>(undefined);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
+  const [genre, setGenres] = useState<string>('28');
 
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
-      const moviesData = await fetchMovies(language);
+      const moviesData = await fetchMovies(language, genre);
       if (moviesData) {
         setMovies(moviesData);
         setLoading(false);
@@ -24,14 +25,14 @@ const HomePage = () => {
       }
     };
     fetchData();
-  }, []);
+  }, [language, genre]);
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>{error}</div>;
 
   return (
     <>
-      <GenreSelector />
+      <GenreSelector genre={genre} onSelectGenre={setGenres} />
       {movies && movies.length > 0 ? (
         <MoviesList data={movies} />
       ) : (
