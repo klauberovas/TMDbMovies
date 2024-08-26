@@ -4,12 +4,13 @@ TMDb Movies je jednoduchá aplikace postavená na Reactu a TypeScriptu, která u
 
 ## Funkce
 
-- **Seznam filmů**: Zobrazí seznam filmů na základě vyhledávacího dotazu.
-- **Detail filmu**: Po kliknutí na film se zobrazí detailní informace o vybraném filmu, včetně názvu, popisu, data vydání a plakátu.
+- **Úvodní animace**
+- **Seznam filmů**: Zobrazí seznam filmů na základě vyhledávacího dotazu či výběru žánru. Výsledky se zobrazují podle nastaveného jazyka v prohlížeči.
+- **Detail filmu**: Po kliknutí na film se zobrazí detailní informace o vybraném filmu, včetně názvu, popisu, data vydání, plakátu, přehrávání videa.
 
 ## Technologie
 
-- **FontMeme**: Vytvoření nadpisu pro stránku
+- **FontMeme**: Vytvoření loga pro stránku
 - **React**: Front-end knihovna pro vytváření uživatelských rozhraní.
 - **TypeScript**: Staticky typovaný jazyk nad JavaScriptem pro zajištění lepšího typování a vývojářské zkušenosti.
 - **TMDB API**: API pro získávání informací o filmech.
