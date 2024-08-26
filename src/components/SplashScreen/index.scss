@@ -1,0 +1,29 @@
+.splash-screen {
+  margin: 40vh auto;
+  max-width: 400px;
+  position: relative;
+
+  &__image {
+    text-align: center;
+    width: 100%;
+  }
+
+  @keyframes cover {
+    from {
+      left: 0;
+    }
+    to {
+      left: 100vw;
+    }
+  }
+
+  &__cover {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+
+    background-color: #000000;
+
+    animation: cover 3s linear;
+  }
+}

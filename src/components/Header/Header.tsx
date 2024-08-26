@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import './style.scss';
+import './index.scss';
 import title from './img/title.png';
 
 const Header = () => {
