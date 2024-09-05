@@ -11,11 +11,11 @@ const App = () => {
 
   const handleAnimationEnd = (): void => {
     setAnimationFinished(true);
-    localStorage.setItem('splashScreenSeen', 'true');
+    sessionStorage.setItem('splashScreenSeen', 'true');
   };
 
   useEffect(() => {
-    const splashScreenSeen = localStorage.getItem('splashScreenSeen');
+    const splashScreenSeen = sessionStorage.getItem('splashScreenSeen');
     if (splashScreenSeen === 'true') {
       setAnimationFinished(true);
     }
