@@ -4,12 +4,26 @@
 
 html {
   font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
 }
 
 body {
-  background-color: black;
+  background-color: #000000;
   min-height: 100vh;
   margin: 0;
   padding: 1rem;
-  color: white;
+  color: #ffffff;
+}
+
+button {
+  border: none;
+  background: none;
+  color: #ffffff;
+  font-family: 'Open Sans', 'sans-serif';
+  font-size: 1.1rem;
+
+  &:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
 }

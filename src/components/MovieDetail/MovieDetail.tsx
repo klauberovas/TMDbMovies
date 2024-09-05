@@ -10,7 +10,9 @@ const MovieDetail = ({ data }: MovieDetailProps) => {
 
   return (
     <main>
-      <button onClick={() => navigate(-1)}>Zpět</button>
+      <button className="button__back" onClick={() => navigate(-1)}>
+        Zpět
+      </button>
       <h1>{data.title}</h1>
     </main>
   );

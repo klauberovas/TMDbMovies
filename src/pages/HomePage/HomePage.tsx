@@ -8,16 +8,15 @@ import GenreSelector from '../../components/GenreSelector/GenreSelector';
 
 const HomePage = () => {
   const { language } = useLanguageContext();
-  const [movies, setMovies] = useState<Movie[] | undefined>(undefined);
-  const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<string | null>(null);
-
   const navigate = useNavigate();
   const location = useLocation();
 
   const queryParams = new URLSearchParams(location.search);
   const initialGenre = queryParams.get('genre') || '28';
   const [selectedGenre, setSelectedGenre] = useState<string>(initialGenre);
+  const [movies, setMovies] = useState<Movie[] | undefined>(undefined);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -38,9 +37,7 @@ const HomePage = () => {
     navigate(`/movies?genre=${selectedGenre}`);
   }, [selectedGenre, navigate]);
 
-  const handleGenreChange = (newGenre: string) => {
-    setSelectedGenre(newGenre);
-  };
+  const handleGenreChange = (newGenre: string) => setSelectedGenre(newGenre);
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>{error}</div>;
@@ -48,7 +45,7 @@ const HomePage = () => {
   return (
     <>
       <GenreSelector genre={selectedGenre} onSelectGenre={handleGenreChange} />
-      {movies && movies.length > 0 ? (
+      {movies?.length ? (
         <MoviesList data={movies} />
       ) : (
         <div>No movies available</div>
