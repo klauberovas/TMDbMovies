@@ -13,6 +13,7 @@ const HomePage = () => {
 
   const queryParams = new URLSearchParams(location.search);
   const initialGenre = queryParams.get('genre') || '28';
+
   const [selectedGenre, setSelectedGenre] = useState<string>(initialGenre);
   const [movies, setMovies] = useState<Movie[] | undefined>(undefined);
   const [loading, setLoading] = useState<boolean>(true);

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
 import Header from './components/Header/Header.tsx';
 import SplashScreen from './components/SplashScreen/SplashScreen.tsx';
@@ -11,7 +11,15 @@ const App = () => {
 
   const handleAnimationEnd = (): void => {
     setAnimationFinished(true);
+    localStorage.setItem('splashScreenSeen', 'true');
   };
+
+  useEffect(() => {
+    const splashScreenSeen = localStorage.getItem('splashScreenSeen');
+    if (splashScreenSeen === 'true') {
+      setAnimationFinished(true);
+    }
+  }, []);
 
   return (
     <>

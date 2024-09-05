@@ -6,7 +6,7 @@ TMDb Movies je jednoduchá aplikace postavená na Reactu a TypeScriptu, která u
 
 - **Úvodní animace**
 - **Seznam filmů**: Zobrazí seznam filmů na základě vyhledávacího dotazu či výběru žánru. Výsledky se zobrazují podle nastaveného jazyka v prohlížeči.
-- **Detail filmu**: Po kliknutí na film se zobrazí detailní informace o vybraném filmu, včetně názvu, popisu, data vydání, plakátu, přehrávání videa.
+- **Detail filmu**: Po kliknutí na konkrétní položku v seznamu se zobrazí podrobné informace o vybraném filmu, včetně názvu, popisu, data vydání, plakátu a možnosti přehrát video. Kliknutím na tlačítko „Zpět“ se vrátíte na předchozí vybraný žánr.
 
 ## Technologie
 
