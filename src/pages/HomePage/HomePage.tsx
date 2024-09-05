@@ -1,21 +1,28 @@
 import { useState, useEffect } from 'react';
+import { useLanguageContext } from '../../settings/settings';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { fetchMovies } from '../../services/tmdb';
 import { Movie } from '../../types/movies';
 import MoviesList from '../../components/MoviesList/MoviesList';
 import GenreSelector from '../../components/GenreSelector/GenreSelector';
-import { useLanguageContext } from '../../settings/settings';
 
 const HomePage = () => {
   const { language } = useLanguageContext();
   const [movies, setMovies] = useState<Movie[] | undefined>(undefined);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
-  const [genre, setGenres] = useState<string>('28');
+
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const queryParams = new URLSearchParams(location.search);
+  const initialGenre = queryParams.get('genre') || '28';
+  const [selectedGenre, setSelectedGenre] = useState<string>(initialGenre);
 
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
-      const moviesData = await fetchMovies(language, genre);
+      const moviesData = await fetchMovies(language, selectedGenre);
       if (moviesData) {
         setMovies(moviesData);
         setLoading(false);
@@ -25,14 +32,22 @@ const HomePage = () => {
       }
     };
     fetchData();
-  }, [language, genre]);
+  }, [language, selectedGenre]);
+
+  useEffect(() => {
+    navigate(`/movies?genre=${selectedGenre}`);
+  }, [selectedGenre, navigate]);
+
+  const handleGenreChange = (newGenre: string) => {
+    setSelectedGenre(newGenre);
+  };
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>{error}</div>;
 
   return (
     <>
-      <GenreSelector genre={genre} onSelectGenre={setGenres} />
+      <GenreSelector genre={selectedGenre} onSelectGenre={handleGenreChange} />
       {movies && movies.length > 0 ? (
         <MoviesList data={movies} />
       ) : (
