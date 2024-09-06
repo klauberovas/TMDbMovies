@@ -1,9 +1,17 @@
 * {
   box-sizing: border-box;
 }
+html,
+button {
+  font-family: 'Open Sans', sans-serif;
+}
+
+body,
+button {
+  color: #ffffff;
+}
 
 html {
-  font-family: 'Open Sans', sans-serif;
   font-size: 16px;
 }
 
@@ -12,7 +20,6 @@ body {
   min-height: 100vh;
   margin: 0;
   padding: 1rem;
-  color: #ffffff;
 }
 
 main {
@@ -20,14 +27,12 @@ main {
 }
 
 button {
+  display: inline-block;
   border: none;
   background: none;
-  color: #ffffff;
-  font-family: 'Open Sans', 'sans-serif';
   font-size: 1.1rem;
 
   &:hover {
-    text-decoration: underline;
     cursor: pointer;
   }
 }

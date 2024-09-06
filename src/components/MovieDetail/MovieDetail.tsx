@@ -11,14 +11,14 @@ const MovieDetail = ({ data }: MovieDetailProps) => {
 
   return (
     <>
-      <button
-        className="button__back"
-        onClick={() => navigate(-1)}
-        aria-label="Zpět na předchozí stránku"
-      >
-        Zpět
-      </button>
       <article className="film">
+        <button
+          className="button__back"
+          onClick={() => navigate(-1)}
+          aria-label="Zpět na předchozí stránku"
+        >
+          Zpět na předchozí stránku
+        </button>
         <figure className="film__poster">
           <img
             className="film__img"
@@ -27,7 +27,12 @@ const MovieDetail = ({ data }: MovieDetailProps) => {
           />
           <figcaption className="film__description">
             <h1 className="film__title">{data.title}</h1>
-            <p>{data.overview}</p>
+            <p className="film__overview">{data.overview}</p>
+            <div className="film__genres">
+              {data.genres.map((genre) => {
+                return <div key={genre.id}>{genre.name}</div>;
+              })}
+            </div>
           </figcaption>
         </figure>
       </article>

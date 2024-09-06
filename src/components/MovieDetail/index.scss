@@ -1,8 +1,19 @@
+/*-----Button back -----*/
+.button__back {
+  text-decoration: underline;
+  margin-left: 2rem;
+}
 /*-----Film detail -----*/
 .film {
   margin: 0 auto;
   max-width: 60rem;
-  text-align: center;
+
+  &__title,
+  &__genres,
+  &__description,
+  &__poster {
+    text-align: center;
+  }
 
   &__title {
     margin: 1rem 0;
@@ -15,7 +26,23 @@
     max-height: 450px;
   }
 
-  @media screen and (min-width: 550px) {
+  &__genres {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    & div {
+      text-align: center;
+      border-radius: 10%;
+      background-color: #e50914c2;
+      padding: 0.5rem;
+
+      align-content: center;
+    }
+  }
+
+  @media screen and (min-width: 570px) {
     &__poster {
       display: flex;
       justify-content: center;
@@ -27,6 +54,7 @@
       flex: 1 1 50%;
     }
 
+    &__title,
     &__description {
       text-align: left;
     }
@@ -34,6 +62,10 @@
     &__img {
       min-width: 200px;
       max-width: 300px;
+    }
+
+    &__genres {
+      justify-content: flex-start;
     }
   }
 
