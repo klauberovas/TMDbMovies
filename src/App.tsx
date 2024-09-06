@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
+import { LanguageContext } from './settings/settings.ts';
 import Header from './components/Header/Header.tsx';
 import SplashScreen from './components/SplashScreen/SplashScreen.tsx';
-import { LanguageContext } from './settings/settings.ts';
 import './App.scss';
 
 const App = () => {
