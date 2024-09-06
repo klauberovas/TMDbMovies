@@ -1,0 +1,45 @@
+/*-----Film detail -----*/
+.film {
+  margin: 0 auto;
+  max-width: 60rem;
+  text-align: center;
+
+  &__title {
+    margin: 1rem 0;
+    font-size: 1.2rem;
+  }
+
+  &__img {
+    width: 100%;
+    max-width: 300px;
+    max-height: 450px;
+  }
+
+  @media screen and (min-width: 550px) {
+    &__poster {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    &__description,
+    &__img {
+      flex: 1 1 50%;
+    }
+
+    &__description {
+      text-align: left;
+    }
+
+    &__img {
+      min-width: 200px;
+      max-width: 300px;
+    }
+  }
+
+  @media screen and (min-width: 650px) {
+    &__poster {
+      gap: 3rem;
+    }
+  }
+}
