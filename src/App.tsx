@@ -3,6 +3,7 @@ import { Outlet } from 'react-router-dom';
 import { LanguageContext } from './settings/settings.ts';
 import Header from './components/Header/Header.tsx';
 import SplashScreen from './components/SplashScreen/SplashScreen.tsx';
+import Footer from './components/Footer/Footer.tsx';
 import './App.scss';
 
 const App = () => {
@@ -31,6 +32,7 @@ const App = () => {
           <LanguageContext.Provider value={{ language }}>
             <Outlet />
           </LanguageContext.Provider>
+          <Footer />
         </>
       )}
     </>

@@ -8,7 +8,7 @@ interface MovieListProps {
 
 const MoviesList = ({ data }: MovieListProps) => {
   return (
-    <div className="movies-list">
+    <section className="movies-list">
       {data.map((movie) => (
         <MoviePreview
           key={movie.id}
@@ -17,7 +17,7 @@ const MoviesList = ({ data }: MovieListProps) => {
           src={movie.poster_path}
         />
       ))}
-    </div>
+    </section>
   );
 };
 

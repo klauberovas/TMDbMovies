@@ -41,7 +41,7 @@ const GenreSelector = ({ genre, onSelectGenre }: GenreSelectorProps) => {
   return (
     <>
       {genres && genres.length > 0 ? (
-        <div className="genre-selector">
+        <section className="genre-selector">
           <select
             className="genre-selector__select"
             name="genres"
@@ -61,7 +61,7 @@ const GenreSelector = ({ genre, onSelectGenre }: GenreSelectorProps) => {
               );
             })}
           </select>
-        </div>
+        </section>
       ) : (
         <div>No genres available</div>
       )}

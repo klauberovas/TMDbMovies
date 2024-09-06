@@ -44,14 +44,14 @@ const HomePage = () => {
   if (error) return <div>{error}</div>;
 
   return (
-    <>
+    <main>
       <GenreSelector genre={selectedGenre} onSelectGenre={handleGenreChange} />
       {movies?.length ? (
         <MoviesList data={movies} />
       ) : (
         <div>No movies available</div>
       )}
-    </>
+    </main>
   );
 };
 

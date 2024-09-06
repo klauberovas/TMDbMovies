@@ -9,12 +9,12 @@ const MovieDetail = ({ data }: MovieDetailProps) => {
   const navigate = useNavigate();
 
   return (
-    <main>
+    <div>
       <button className="button__back" onClick={() => navigate(-1)}>
         Zpět
       </button>
       <h1>{data.title}</h1>
-    </main>
+    </div>
   );
 };
 
